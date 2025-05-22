@@ -1,0 +1,52 @@
+/* cafe24 고운밤 */
+@font-face {
+  font-family: 'gb-engraving-t1'; /* 수정 */
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* cafe24 SyongSyong */
+@font-face {
+  font-family: 'gb-engraving-t2';
+  src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Syongsyong.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* sangsangShin - 신과장 */
+@font-face {
+  font-family: 'gb-engraving-t3';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/SangSangShin.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 서울남산체-L */
+@font-face {
+  font-family: 'gb-engraving-t4';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SeoulNamsanM.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* ENG */
+/* JaneAusten */
+@font-face {
+  font-family: 'gb-engraving-t5';
+  src: url('Font/JaneAusten.woff2') format('woff2'),
+      url('Font/JaneAusten.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* MongolianBaiti */
+@font-face {
+  font-family: 'gb-engraving-t6';
+  src: url('Font/MongolianBaiti.woff2') format('woff2'),
+      url('Font/MongolianBaiti.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
