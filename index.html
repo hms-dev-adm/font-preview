@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>폰트 미리보기</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&family=Cute+Font&family=Nanum+Gothic:wght@400;700;800&family=Nanum+Myeongjo:wght@400;700;800&family=Jua&family=Gamja+Flower&family=Poor+Story&family=Gowun+Dodum&family=Gowun+Batang:wght@400;700&display=swap"
+    rel="stylesheet">
+
+
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">로고 이미지 자리</div>
+      <h1>FONT PREVIEW</h1>
+      <p>Claude's Typography Showcase</p>
+    </div>
+
+    <div class="input-section">
+      <div class="input-group">
+        <label for="preview-text">미리보기 텍스트</label>
+        <input type="text" id="preview-text" class="text-input" value="안녕하세요 Typography" placeholder="미리보기할 텍스트를 입력하세요">
+      </div>
+    </div>
+
+    <div class="font-list">
+      <div class="font-section">
+        <div class="section-title">한글 폰트</div>
+        <div id="korean-fonts"></div>
+      </div>
+
+      <div class="font-section">
+        <div class="section-title">영문 폰트</div>
+        <div id="english-fonts"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const koreanFonts = [
+      { name: 'Noto Sans KR', family: 'Noto Sans KR, sans-serif', label: 'TYPE 1' },
+      { name: 'Noto Serif KR', family: 'Noto Serif KR, serif', label: 'TYPE 2' },
+      { name: 'Nanum Gothic', family: 'Nanum Gothic, sans-serif', label: 'TYPE 3' },
+      { name: 'Nanum Myeongjo', family: 'Nanum Myeongjo, serif', label: 'TYPE 4' },
+      { name: 'Gowun Dodum', family: 'Gowun Dodum, sans-serif', label: 'TYPE 5' },
+      { name: 'Gowun Batang', family: 'Gowun Batang, serif', label: 'TYPE 6' }
+    ];
+
+    const englishFonts = [
+      { name: 'Cute Font', family: 'Cute Font, cursive', label: 'TYPE 7' },
+      { name: 'Jua', family: 'Jua, sans-serif', label: 'TYPE 8' },
+      { name: 'Gamja Flower', family: 'Gamja Flower, cursive', label: 'TYPE 9' },
+      { name: 'Poor Story', family: 'Poor Story, cursive', label: 'TYPE 10' }
+    ];
+
+    let currentSize = 20;
+
+    function createFontItem(font) {
+      const defaultText = document.getElementById('preview-text').value || '미리보기 텍스트를 입력하세요';
+      return `
+                <div class="font-item">
+                    <div class="font-label">${font.label}</div>
+                    <div class="font-preview" 
+                         style="font-family: ${font.family}; font-size: ${currentSize}px;"
+                         data-font="${font.family}">${defaultText}</div>
+                </div>
+            `;
+    }
+
+    function renderFonts() {
+      const koreanContainer = document.getElementById('korean-fonts');
+      const englishContainer = document.getElementById('english-fonts');
+
+      koreanContainer.innerHTML = koreanFonts.map(createFontItem).join('');
+      englishContainer.innerHTML = englishFonts.map(createFontItem).join('');
+    }
+
+    function updateAllPreviews() {
+      const text = document.getElementById('preview-text').value || '미리보기 텍스트를 입력하세요';
+      const previews = document.querySelectorAll('.font-preview');
+      previews.forEach(preview => {
+        preview.textContent = text;
+      });
+    }
+
+    function updateFontSize(size) {
+      currentSize = size;
+      const previews = document.querySelectorAll('.font-preview');
+      previews.forEach(preview => {
+        preview.style.fontSize = size + 'px';
+      });
+
+      // 활성 버튼 업데이트
+      document.querySelectorAll('.size-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.querySelector(`[data-size="${size}"]`).classList.add('active');
+    }
+
+    // 이벤트 리스너
+    document.getElementById('preview-text').addEventListener('input', updateAllPreviews);
+
+    document.querySelectorAll('.size-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        updateFontSize(parseInt(btn.dataset.size));
+      });
+    });
+
+    // 초기 렌더링
+    renderFonts();
+  </script>
+</body>
+
+</html>
