@@ -46,7 +46,7 @@
 body {
     background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
     color: var(--text-primary);
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: "Gothic A1", sans-serif;
     min-height: 100vh;
     padding: 40px 20px;
 }
@@ -69,15 +69,15 @@ body {
 }
 
 .header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    font-weight: 300;
-    letter-spacing: 2px;
+    font-family: "Noto Sans", "Gothic A1", sans-serif;
+    font-size: 48px;
+    font-weight: 100;
+    letter-spacing: 0.2px;
 }
 
 .header p {
     font-size: 1.1rem;
-    opacity: 0.9;
+    opacity: 0.7;
 }
 
 .input-section {
@@ -215,27 +215,4 @@ body {
 .font-preview:hover {
     background: var(--accent-bg-hover);
     border-color: var(--border-accent);
-}
-
-.note {
-    text-align: center;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-top: 20px;
-    font-style: italic;
-}
-
-/* 클로드 로고 스타일 */
-.logo {
-    width: 40px;
-    height: 40px;
-    background: var(--accent-primary);
-    border-radius: 8px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-light);
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-bottom: 15px;
 }

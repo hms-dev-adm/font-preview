@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>폰트 미리보기</title>
+  <title>각인체 미리보기</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&family=Cute+Font&family=Nanum+Gothic:wght@400;700;800&family=Nanum+Myeongjo:wght@400;700;800&family=Jua&family=Gamja+Flower&family=Poor+Story&family=Gowun+Dodum&family=Gowun+Batang:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Gothic+A1&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
   <link href="/font.css" rel="stylesheet" />
   <link href="/style.css" rel="stylesheet" />
@@ -20,13 +20,14 @@
     <div class="header">
       <div class="logo">로고 이미지 자리</div>
       <h1>FONT PREVIEW</h1>
-      <p>Claude's Typography Showcase</p>
+      <p>Gongbang301 Typography Showcase</p>
     </div>
 
     <div class="input-section">
       <div class="input-group">
         <label for="preview-text">미리보기 텍스트</label>
-        <input type="text" id="preview-text" class="text-input" value="안녕하세요 Typography" placeholder="미리보기할 텍스트를 입력하세요">
+        <input type="text" id="preview-text" class="text-input" value="Enter text what you want"
+          placeholder="각인체를 확인해보세요">
       </div>
     </div>
 
@@ -46,22 +47,18 @@
 
   <script>
     const koreanFonts = [
-      { name: 'Noto Sans KR', family: 'Noto Sans KR, sans-serif', label: 'TYPE 1' },
-      { name: 'Noto Serif KR', family: 'Noto Serif KR, serif', label: 'TYPE 2' },
-      { name: 'Nanum Gothic', family: 'Nanum Gothic, sans-serif', label: 'TYPE 3' },
-      { name: 'Nanum Myeongjo', family: 'Nanum Myeongjo, serif', label: 'TYPE 4' },
-      { name: 'Gowun Dodum', family: 'Gowun Dodum, sans-serif', label: 'TYPE 5' },
-      { name: 'Gowun Batang', family: 'Gowun Batang, serif', label: 'TYPE 6' }
+      { name: 'Cafe24 고운밤', family: 'gb-engraving-t1, sans-serif', label: 'TYPE 1' },
+      { name: 'Cafe24 SyongSyong', family: 'gb-engraving-t2, sans-serif', label: 'TYPE 2' },
+      { name: '상상Shin (신과장)', family: 'gb-engraving-t3, sans-serif', label: 'TYPE 3' },
+      { name: '서울남산체', family: 'gb-engraving-t4, sans-serif', label: 'TYPE 4' }
     ];
 
     const englishFonts = [
-      { name: 'Cute Font', family: 'Cute Font, cursive', label: 'TYPE 7' },
-      { name: 'Jua', family: 'Jua, sans-serif', label: 'TYPE 8' },
-      { name: 'Gamja Flower', family: 'Gamja Flower, cursive', label: 'TYPE 9' },
-      { name: 'Poor Story', family: 'Poor Story, cursive', label: 'TYPE 10' }
+      { name: 'Jane Austen', family: 'gb-engraving-t5, serif', label: 'TYPE 5' },
+      { name: 'Mongolian Baiti', family: 'gb-engraving-t6, serif', label: 'TYPE 6' }
     ];
 
-    let currentSize = 20;
+    let currentSize = 30;
 
     function createFontItem(font) {
       const defaultText = document.getElementById('preview-text').value || '미리보기 텍스트를 입력하세요';
