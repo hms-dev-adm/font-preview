@@ -55,3 +55,24 @@
   font-style: normal;
   font-display: swap;
 }
+
+
+/* MonotypeCorsiva */
+@font-face {
+    font-family: 'gb-engraving-t7';
+    src: url('Font/MonotypeCorsiva.woff2') format('woff2'),
+        url('Font/MonotypeCorsiva.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* The Constellation of Heracles */
+@font-face {
+    font-family: 'gb-engraving-t8';
+    src: url('Font/TheConstellationofHeracles.woff2') format('woff2'),
+        url('Font/TheConstellationofHeracles.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
