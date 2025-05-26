@@ -200,13 +200,13 @@ body {
 .font-preview {
     flex: 1;
     padding: 15px 20px;
-    background: var(--accent-bg);
-    border-radius: 8px;
-    margin-left: 15px;
+    /* background: var(--accent-bg); */
+    /* border-radius: 8px; */
+    /* margin-left: 15px; */
     min-height: 60px;
-    display: flex;
-    align-items: center;
-    border: 1px solid var(--border-light);
+    /* display: flex; */
+    /* align-items: center; */
+    /* border: 1px solid var(--border-light); */
     transition: all 0.3s ease;
     color: var(--text-dark);
     line-height: 1.4;
@@ -215,4 +215,8 @@ body {
 .font-preview:hover {
     background: var(--accent-bg-hover);
     border-color: var(--border-accent);
+}
+
+.font-preview[data-font*="gb-engraving-t8"] {
+    font-size: 100px !important;
 }
