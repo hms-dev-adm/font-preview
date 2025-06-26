@@ -18,15 +18,23 @@
 <body>
   <div class="container">
     <div class="header">
-      <div class="logo"></div>
+      <div class="logo">C</div>
       <h1>FONT PREVIEW</h1>
-      <p>Gongbang301 Engraving Showcase</p>
+      <p>GONGBANG301 Engraving Preview & Selection</p>
     </div>
 
     <div class="input-section">
       <div class="input-group">
         <label for="preview-text">미리보기 텍스트</label>
-        <input type="text" id="preview-text" class="text-input" placeholder="Enter your text">
+        <input type="text" id="preview-text" class="text-input" value="" placeholder="원하는 텍스트를 입력해서 폰트를 비교해보세요">
+      </div>
+
+      <div class="size-controls">
+        <span>글자 크기</span>
+        <div class="size-slider-container">
+          <input type="range" id="size-slider" class="size-slider" min="12" max="60" value="24" step="2">
+          <div class="size-display" id="size-display">30px</div>
+        </div>
       </div>
     </div>
 
@@ -40,10 +48,16 @@
         <div class="section-title">영문 폰트</div>
         <div id="english-fonts"></div>
       </div>
+    </div>
 
+    <div class="footer">
+      <!-- <div class="social-links">
+        <a href="#" class="social-link" title="Instagram">📷</a>
+      </div> -->
+
+      <div class="copyright">© 2024 HMS GROUP. All rights reserved.</div>
     </div>
   </div>
-
   <script>
     const koreanFonts = [
       { name: 'Cafe24 고운밤', family: 'gb-engraving-t1, sans-serif', label: 'TYPE 1' },
@@ -94,27 +108,52 @@
       currentSize = size;
       const previews = document.querySelectorAll('.font-preview');
       previews.forEach(preview => {
-        preview.style.fontSize = size + 'px';
+        // TYPE 6
+        if (preview.dataset.font.includes('gb-engraving-t6')) {
+          preview.style.fontSize = (size * 1.3) + 'px';
+        } else if (preview.dataset.font.includes('gb-engraving-t8')) {
+          preview.style.fontSize = (size * 2) + 'px';
+        }
+        else {
+          preview.style.fontSize = size + 'px';
+        }
+
+        document.getElementById('size-display').textContent = size + 'px';
       });
 
-      // 활성 버튼 업데이트
-      document.querySelectorAll('.size-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      document.querySelector(`[data-size="${size}"]`).classList.add('active');
+
     }
 
     // 이벤트 리스너
     document.getElementById('preview-text').addEventListener('input', updateAllPreviews);
 
-    document.querySelectorAll('.size-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        updateFontSize(parseInt(btn.dataset.size));
-      });
+    document.getElementById('size-slider').addEventListener('input', (e) => {
+      updateFontSize(parseInt(e.target.value));
     });
+
 
     // 초기 렌더링
     renderFonts();
+
+    // 스크롤 애니메이션
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, observerOptions);
+
+    // 애니메이션 요소들 관찰
+    document.addEventListener('DOMContentLoaded', () => {
+      const animatedElements = document.querySelectorAll('.font-item, .font-section');
+      animatedElements.forEach(el => observer.observe(el));
+    });
   </script>
 </body>
 
