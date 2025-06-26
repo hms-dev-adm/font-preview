@@ -45,7 +45,7 @@
     --shadow-light: rgba(139, 69, 19, 0.08);
     --shadow-medium: rgba(139, 69, 19, 0.15);
     --shadow-focus: var(--brand-orange-glow);
-    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --shadow-glass: 0 3px 20px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -104,12 +104,11 @@ body {
 
 .input-section {
     background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    /* backdrop-filter: blur(5px); */
+    /* -webkit-backdrop-filter: blur(5px); */
     border: 1px solid var(--glass-border);
-    border-radius: 20px;
     padding: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     box-shadow: var(--shadow-glass);
 }
 
@@ -278,7 +277,7 @@ body {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
-    border-radius: 20px;
+    /* border-radius: 20px; */
     text-align: center;
     box-shadow: var(--shadow-glass);
 }
