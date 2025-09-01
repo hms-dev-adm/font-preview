@@ -29,13 +29,13 @@
         <input type="text" id="preview-text" class="text-input" value="" placeholder="원하는 텍스트를 입력해서 폰트를 비교해보세요">
       </div>
 
-      <div class="size-controls">
+      <!-- <div class="size-controls">
         <span>글자 크기</span>
         <div class="size-slider-container">
           <input type="range" id="size-slider" class="size-slider" min="12" max="60" value="24" step="2">
           <div class="size-display" id="size-display">30px</div>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <div class="font-list">
@@ -104,6 +104,7 @@
       });
     }
 
+    // font-slider
     function updateFontSize(size) {
       currentSize = size;
       const previews = document.querySelectorAll('.font-preview');
@@ -127,9 +128,9 @@
     // 이벤트 리스너
     document.getElementById('preview-text').addEventListener('input', updateAllPreviews);
 
-    document.getElementById('size-slider').addEventListener('input', (e) => {
-      updateFontSize(parseInt(e.target.value));
-    });
+    // document.getElementById('size-slider').addEventListener('input', (e) => {
+    //   updateFontSize(parseInt(e.target.value));
+    // });
 
 
     // 초기 렌더링
