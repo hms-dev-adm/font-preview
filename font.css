@@ -60,13 +60,13 @@
 
 /* happytime */
 @font-face {
-  font-family: 'gb-engraving-t7';
-  src: url("https://db.onlinewebfonts.com/t/6980f8437557d0e802cd522bd5df4792.woff2")format("woff2"),
+  font-family: "gb-engraving-t7";
+  src: url("https://db.onlinewebfonts.com/t/6980f8437557d0e802cd522bd5df4792.eot");
+  src: url("https://db.onlinewebfonts.com/t/6980f8437557d0e802cd522bd5df4792.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/6980f8437557d0e802cd522bd5df4792.woff2")format("woff2"),
     url("https://db.onlinewebfonts.com/t/6980f8437557d0e802cd522bd5df4792.woff")format("woff"),
-    url('Font/HappyTime.otf') format('opentype');
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
+    url("https://db.onlinewebfonts.com/t/6980f8437557d0e802cd522bd5df4792.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/6980f8437557d0e802cd522bd5df4792.svg#Happy Time")format("svg");
 }
 
 /* 안창호체 */
