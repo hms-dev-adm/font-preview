@@ -61,7 +61,8 @@
 /* happytime */
 @font-face {
   font-family: 'gb-engraving-t7';
-  src: url('https://fonts.cdnfonts.com/s/20895/HappyTime.woff') format('woff'),
+  src: url("https://db.onlinewebfonts.com/t/6980f8437557d0e802cd522bd5df4792.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/6980f8437557d0e802cd522bd5df4792.woff")format("woff"),
     url('Font/HappyTime.otf') format('opentype');
   font-weight: normal;
   font-style: italic;
